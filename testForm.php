@@ -1,13 +1,15 @@
 <?php
 require_once "Form.php";
-require_once "Field.php";
+require_once "SimpleField.php";
 
     $form1 = new Form("validate.php","Prueba form","POST");
     
-    $field1 = new Field("Campo 1", "text");
-    $form1->add($field1);
-    $form1-> add(new Field("Campo 2","number"));
-    $form1-> add(new Field("Campo 3","color"));
+    $simpleField1 = new SimpleField("name", "text", "Nombre","Valor por defecto");
+    $form1->add($simpleField1);
+    $form1-> add(new SimpleField("age","number","Edad","18"));
+    $form1-> add(new SimpleField("color","color","color favorito", "#FF0000"));
+    $form1-> add(new SimpleField("suscripcion","checkbox","¿Quieres suscribirte?","true"));
+
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +20,7 @@ require_once "Field.php";
     <title>Document</title>
     <style>
         form{
-            border: 1px solid green;
+            border: 2px solid green;
         }
     </style>
 </head>
