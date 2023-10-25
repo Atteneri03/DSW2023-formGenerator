@@ -1,5 +1,5 @@
 <?php
-class Form {
+class Form extends Element{
     private $action;
     private $title;
     private $method;
